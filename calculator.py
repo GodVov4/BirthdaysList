@@ -4,12 +4,12 @@ operator = None
 wait_for_number = True
 
 while True:
-    inp = input('Input number: ') if wait_for_number else input('Input operator: ')
+    user_input = input('Input number: ') if wait_for_number else input('Input operator: ')
     if wait_for_number:
         try:
-            operand = float(inp)
+            operand = float(user_input)
         except ValueError:
-            print(f'{inp!r} is not a number. Try again.')
+            print(f'{user_input!r} is not a number. Try again.')
             continue
         if result is None:
             result = operand
@@ -26,12 +26,12 @@ while True:
             case '*':
                 result *= operand
     else:
-        if inp == '=':
+        if user_input == '=':
             print(result)
             break
-        elif inp == '+' or inp == '-' or inp == '/' or inp == '*':
-            operator = inp
+        elif user_input == '+' or user_input == '-' or user_input == '/' or user_input == '*':
+            operator = user_input
         else:
-            print(f"{inp!r} is not '+' or '-' or '/' or '*'. Try again")
+            print(f"{user_input!r} is not '+' or '-' or '/' or '*'. Try again")
             continue
     wait_for_number = not wait_for_number
