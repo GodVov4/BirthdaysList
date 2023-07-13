@@ -29,7 +29,7 @@ while True:
         if inp == '=':
             print(result)
             break
-        elif inp in ['+', '-', '/', '*']:
+        elif inp == '+' or inp == '-' or inp == '/' or inp == '*':
             operator = inp
         else:
             print(f"{inp!r} is not '+' or '-' or '/' or '*'. Try again")
